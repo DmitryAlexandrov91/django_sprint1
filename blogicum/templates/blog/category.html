@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-    <title>Публикации в категории {{ post }}</title>
+  <title>Публикации в категории {{ category }}</title>
 {% endblock %}
-{% include "includes/header.html" %}
 {% block content %}
-        <h1>Публикации в категории {{ post }}</h1>  
-         
+  <h1>Публикации в категории {{ category }}</h1>          
 {% endblock %}
-{% include "includes/footer.html" %}
