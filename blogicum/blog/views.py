@@ -45,7 +45,7 @@ posts = [
     },
 ]
 
-test = {post['id']: post for post in posts}
+posts_by_id = {post['id']: post for post in posts}
 
 
 def index(request):
@@ -57,8 +57,8 @@ def index(request):
 def post_detail(request, id):
     template = 'blog/detail.html'
     try:
-        context = {'post': posts[id]}
-    except IndexError:
+        context = {'post': posts_by_id[id]}
+    except KeyError:
         raise Http404
     return render(request, template, context)
 
