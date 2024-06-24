@@ -4,12 +4,12 @@
 {% endblock %}  
 {% block content %}
   <h1>Лента записей</h1>                        
-  {% for post in post reversed %}
+  {% for post in posts reversed %}
   <hr>
   <article>
     <ul>
       <li>
-        Место: {{ posts.location }}             
+        Место: {{ post.location }}             
       </li>
       <li>
         Дата: {{ post.date }}

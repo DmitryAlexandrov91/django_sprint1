@@ -50,7 +50,7 @@ posts_by_id = {post['id']: post for post in posts}
 
 def index(request):
     template = 'blog/index.html'
-    context = {'post': posts}
+    context = {'posts': posts}
     return render(request, template, context)
 
 
@@ -59,7 +59,7 @@ def post_detail(request, id):
     try:
         context = {'post': posts_by_id[id]}
     except KeyError:
-        raise Http404
+        raise Http404(f'Записи номер {id} не существует...')
     return render(request, template, context)
 
 
